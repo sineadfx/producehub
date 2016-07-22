@@ -1,0 +1,21 @@
+
+
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: €</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:pk_test_Z9jqqrx4a0i2osf6Q4BhSTVP] %>"
+          data-description="Billing"
+          data-amount=""
+          data-locale="auto"></script>
+<% end %>
+

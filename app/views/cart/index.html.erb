@@ -1,0 +1,36 @@
+<h1>Your Cart</h1>
+
+<% if @cart.empty? %>
+  <p>Your Cart is Currently Empty</p>
+<%else%>
+<%= link_to "Empty Your Cart", cart_clear_path, class: 'actions' %>
+<% end %>
+<br><br><br>
+
+
+
+<%total = 0 %>
+
+
+<ul>
+<% @cart.each do | id, quantity | %>
+  <% item = Item.find_by_id(id) %>
+    <li>
+      <%= link_to item.title, item, class: 'actions' %>  
+      <p><strong><%= item.description %></strong></p>
+      <p><%= number_to_currency(item.price, :unit => "€")%></p>
+      <p>Quantity: <%= quantity %></p>
+      </li>
+    
+ <% total = total + quantity * item.price%>
+
+<% end %>
+<p><b> TOTAL: <%= number_to_currency(total, :unit => '€') %></b></p>
+</ul>
+<% if @cart.empty? %>
+  <p>Check Out Unavailable</p>
+<%else%>
+<%= link_to "Proceed to checkout", charges_path, class: 'actions' %>
+<% end %>
+
+<p>#TheProduceHub</p>

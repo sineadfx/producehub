@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<div class="order">
+<h1><strong>How it works</strong></h1>
+<p><strong>We offer a pay as you go service on all our boxes. We deliver your produce box directly to your door up to 3 times
+a week. Choose your box or build your own and pay online and your box will delivered to you weather you are home or not, it's simple! 
+We're here to make your life easier..and healthier! If you have any questions, please submit an enquiry form and our team will get
+back to you within 24 hours. Once you have selected and purchased your box we will send you a confirmation email and delivery
+details shortly after.</strong></p>
+</div>
+
+
+<div class="tbody">
+<h1>Our Products</h1>
+
+
+
+<div class="box">
+<img src="/assets/images/ourbox.jpg" alt="logo" style="width: 18%; height: 15%"/></a>
+
+
+<img src="/assets/images/berries.jpg" alt="logo" style="width: 15%; height: 15%"/>
+
+<img src="/assets/images/fruitmix.jpg" alt="logo" style="width: 15%; height: 15%"/>
+
+<img src="/assets/images/fruitandvegbox.jpg" alt="logo" style="width: 15%; height: 15%"/>
+
+<img src="/assets/images/fruit.jpg" alt="logo" style="width: 15%; height: 15%"/>
+
+
+<img src="/assets/images/box.jpg" alt="logo" style="width: 15%; height: 15%"/>
+</div>
+
+
+<div class="items">
+<table>
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+       
+        <td><%= item.title %><img src="/assets/images/ourbox.jpg" alt="logo" style="width: 40%; height: auto"/></a></td>
+        <td><%= item.description %></td>
+        <td><%= item.price %><p>€</p></td>
+        <td><%= item.image %></td>
+        </div>
+        
+        <div class="links">
+        <% if @authenticated %>
+        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+       <td><a href="/cart/<%= item.id %>" style="color:black">Add To Cart</a> </td> 
+        <%end%>
+         
+      </tr>
+     
+   
+  </tbody>
+</table>
+</div>
+</div>
+<br>
+
+
+
+
+ <% if @authenticated %>
+<%= link_to 'New Item', new_item_path %>
+<% end %>
