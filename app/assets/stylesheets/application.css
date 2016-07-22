@@ -115,8 +115,7 @@ text-decoration: none;
 -webkit-border-radius: 10px;
 -moz-border-radius: 10px;
 border-radius: 10px;
-border: 1px solid #999;
-border: inset 1px solid #333;
+
 -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
@@ -175,7 +174,6 @@ div.transbox {
   margin-left: 22%;
   width: 70%;
   background-color: #ffffff;
-  border: 1px solid;
   opacity: 0.6;
   filter: alpha(opacity=60);
   line-height: 1em; /* For IE8 and earlier */
@@ -271,7 +269,7 @@ h2{
 	background-color: black;
 	color: white;
 	width: 40%;
-	height: 50%;
+
 	text-align: center;
 	padding-bottom: 3%;
 	padding-top: 1%;
@@ -288,10 +286,7 @@ h2{
 	font-size: 1.5em;
     font-size: 1.7vw;
 	color: black;
-	margin-left: 20%;
-	margin-right: 25%;
-	margin-top: -28%;
-	margin-bottom: 5%;
+	margin: 20% 25% -28% 5%;
 	font-family: Courier;
 	width: 60%;
 	text-align: center;
